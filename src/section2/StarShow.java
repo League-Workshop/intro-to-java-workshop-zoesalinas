@@ -15,7 +15,7 @@ public class StarShow {
 		
 	//5. delete this line. You will draw the star again in step 8.
 		// 13. Set the speed to 8
-
+cat.setSpeed(8);
 		// 6. Make a variable to hold the X position of the Robot and set it to 10
 int Xpos= 10;
 		// 7. Make a variable to hold the Y position of the Robot and set it to 600
@@ -33,9 +33,9 @@ for(int i=0; i<30; i++) {
 			// 9. Call the drawStar() method with your star size variable
 	drawStar(starSize);
 			// 14. Increase the value of the X position variable by star size. See Figure 2
-	
+cat.setX(Xpos+starSize);
 			// 15. decrease the value of the Y position variable by star size. See Figure 3
-	
+	cat.setY(Ypos-starSize);
 			// 16. Increase the star size by 20
 	
 			// 17. Turn the robot 12 degrees
