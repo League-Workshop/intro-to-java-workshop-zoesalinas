@@ -16,44 +16,52 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
-	
+	Robot cat = new Robot("mini");
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
-		
+		cat.setAngle(0);
+		cat.microMove(25);
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
-		
+		cat.setAngle(180);
+		cat.microMove(25);
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
-
+        cat.setAngle(270);
+        cat.microMove(25);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		cat.setAngle(90);
+		cat.microMove(25);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = cat.getX();
+		int robotYLocation = cat.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
-		
+		System.out.println(cat.getX() + ","+ cat.getY());
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
-		
+		if(robotXLocation==725 && robotYLocation==400) {
+			JOptionPane.showMessageDialog(null, "Go the the third tooth of the skull");
+		}
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
 		
 		// 9.  If the robot is in the final location
 		//     --call the treasureFound() method
-		
+		if(robotXLocation==250 && robotYLocation==150) {
+			treasureFound();
+		}
 	}
 
 	private void go() {
